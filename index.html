@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coherent Topological Flow: Reconciling Safety and Geometry in Generative Robot Planning</title>
+    <style>
+        /* 页面全局样式 */
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #fcfcfc;
+        }
+        /* 标题和作者样式 */
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            color: #111;
+            margin-bottom: 10px;
+        }
+        .authors {
+            text-align: center;
+            font-size: 1.3em;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        /* 章节标题样式 */
+        h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            color: #222;
+        }
+        h3 {
+            margin-top: 30px;
+            color: #333;
+        }
+        h4 {
+            margin-top: 20px;
+            color: #444;
+        }
+        /* 摘要样式 */
+        .abstract-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            text-align: justify;
+        }
+        /* 架构图样式 */
+        .teaser-image {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        /* 表格与视频矩阵样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: #fff;
+        }
+        th, td {
+            border: 1px solid #eee;
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        th {
+            background-color: #f9f9f9;
+            font-weight: 600;
+        }
+        /* 第一列（方法名称）的样式 */
+        td:first-child, th:first-child {
+            font-weight: bold;
+            width: 120px;
+            background-color: #f9f9f9;
+        }
+        video {
+            width: 100%;
+            border-radius: 4px;
+            background-color: #000;
+        }
+        .caption {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Coherent Topological Flow: Reconciling Safety and Geometry in Generative Robot Planning</h1>
+    <div class="authors">Anonymous Author(s)</div>
+
+    <h2>Abstract</h2>
+    <div class="abstract-box">
+        <p>
+            Generative flow matching has emerged as a powerful paradigm for robot motion planning, yet ensuring safety in topologically complex environments remains challenging due to \textit{topological tearing}—a phenomenon where point-wise safety filters disrupt the trajectory's geometric continuity at topological decision boundaries. To address this, we introduce \textit{Coherent Topological Flow} (CTF), a framework leveraging a novel \textit{spectral-kernel duality} to reconcile hard safety constraints with the intrinsic connectivity of trajectory. CTF constructs a spectral precision matrix to enforce geometric stiffness against high-frequency tearing, complemented by a dual diffusion kernel that propagates local safety constraints globally. Furthermore, we propose a Magnitude-Direction Decoupling strategy grounded in the Vector Heat Method to guide the flow as a unified elastic body, preventing destructive interference. Theoretical analysis proves that CTF guarantees asymptotic safety, while experiments validate that our framework successfully reconciles strict safety constraints with topological consistency.
+        </p>
+    </div>
+
+    <img src="placeholder.jpg" alt="Teaser figure showing the core concept of Coherent Topological Flow" class="teaser-image">
+    <div class="caption">Figure 1: System overview of Coherent Topological Flow.</div>
+
+    <h2>Experimental Results</h2>
+
+    <h3>1. Point Maze Navigation</h3>
+    <table>
+        <tr>
+            <th>Method \ Exp</th>
+            <th>Exp1</th>
+            <th>Exp2</th>
+            <th>Exp3</th>
+            <th>Exp4</th>
+            <th>Exp5</th>
+        </tr>
+        <tr>
+            <td>FM</td>
+            <td><video src="fm_exp1.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="fm_exp2.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="fm_exp3.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="fm_exp4.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="fm_exp5.mp4" autoplay loop muted playsinline></video></td>
+        </tr>
+        <tr>
+            <td>SFM</td>
+            <td><video src="sfm_exp1.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sfm_exp2.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sfm_exp3.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sfm_exp4.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sfm_exp5.mp4" autoplay loop muted playsinline></video></td>
+        </tr>
+        <tr>
+            <td>SFM+OneShot</td>
+            <td><video src="sfm_oneshot_exp1.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sfm_oneshot_exp2.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sfm_oneshot_exp3.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sfm_oneshot_exp4.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sfm_oneshot_exp5.mp4" autoplay loop muted playsinline></video></td>
+        </tr>
+        <tr>
+            <td>CTF</td>
+            <td><video src="ctf_exp1.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="ctf_exp2.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="ctf_exp3.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="ctf_exp4.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="ctf_exp5.mp4" autoplay loop muted playsinline></video></td>
+        </tr>
+    </table>
+
+    <h3>2. Robot Manipulation</h3>
+
+    <h4>2.1 Simulation (Sim)</h4>
+    <table>
+        <tr>
+            <th>Method \ Exp</th>
+            <th>Exp1</th>
+            <th>Exp2</th>
+            <th>Exp3</th>
+        </tr>
+        <tr>
+            <td>FM</td>
+            <td><video src="sim_fm_exp1.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sim_fm_exp2.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sim_fm_exp3.mp4" autoplay loop muted playsinline></video></td>
+        </tr>
+        <tr>
+            <td>SFM</td>
+            <td><video src="sim_sfm_exp1.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sim_sfm_exp2.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sim_sfm_exp3.mp4" autoplay loop muted playsinline></video></td>
+        </tr>
+        <tr>
+            <td>CTF</td>
+            <td><video src="sim_ctf_exp1.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sim_ctf_exp2.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="sim_ctf_exp3.mp4" autoplay loop muted playsinline></video></td>
+        </tr>
+    </table>
+
+    <h4>2.2 Real-world Robot (Real)</h4>
+    <table>
+        <tr>
+            <th>Method \ Exp</th>
+            <th>Exp1</th>
+            <th>Exp2</th>
+            <th>Exp3</th>
+        </tr>
+        <tr>
+            <td>FM</td>
+            <td><video src="real_fm_exp1.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="real_fm_exp2.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="real_fm_exp3.mp4" autoplay loop muted playsinline></video></td>
+        </tr>
+        <tr>
+            <td>SFM</td>
+            <td><video src="real_sfm_exp1.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="real_sfm_exp2.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="real_sfm_exp3.mp4" autoplay loop muted playsinline></video></td>
+        </tr>
+        <tr>
+            <td>CTF</td>
+            <td><video src="real_ctf_exp1.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="real_ctf_exp2.mp4" autoplay loop muted playsinline></video></td>
+            <td><video src="real_ctf_exp3.mp4" autoplay loop muted playsinline></video></td>
+        </tr>
+    </table>
+
+</body>
+</html>
